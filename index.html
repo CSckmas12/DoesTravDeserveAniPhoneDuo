@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Staff Performance Review</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+max-width: 700px;
+margin: 50px auto;
+text-align: center;
+}
+button {
+padding: 10px 20px;
+margin: 10px;
+font-size: 16px;
+cursor: pointer;
+}
+.question {
+display: none;
+}
+</style>
+</head>
+<body>
+ 
+<h1>Employee Performance Review</h1>
+ 
+<div id="q1" class="question" style="display:block;">
+<h2>Is Travis a good worker?</h2>
+<button onclick="nextQuestion('q2')">Yes</button>
+<button onclick="nextQuestion('q2')">No</button>
+</div>
+ 
+<div id="q2" class="question">
+<h2>Does he align with the company's core values?</h2>
+<button onclick="nextQuestion('q3')">Yes</button>
+<button onclick="nextQuestion('q3')">No</button>
+</div>
+ 
+<div id="q3" class="question">
+<h2>Is he polite to staff and clients?</h2>
+<button onclick="nextQuestion('q4')">Yes</button>
+<button onclick="nextQuestion('q4')">No</button>
+</div>
+ 
+<div id="q4" class="question">
+<h2>Do you value him highly?</h2>
+<button onclick="showResult()">Yes</button>
+<button onclick="showResult()">No</button>
+</div>
+ 
+<div id="result" class="question">
+<h1>✅ Review Complete</h1>
+<h2>The boss should buy Travis an iPhone Duo.</h2>
+<p>Based on your responses, this was the only logical conclusion.</p>
+</div>
+ 
+<script>
+function nextQuestion(nextId) {
+document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+document.getElementById(nextId).style.display = 'block';
+}
+ 
+function showResult() {
+document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+document.getElementById('result').style.display = 'block';
+}
+</script>
+ 
+</body>
+</html>
